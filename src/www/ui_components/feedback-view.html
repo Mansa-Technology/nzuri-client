@@ -75,7 +75,7 @@
           <paper-listbox id="categoryList" selected="{{category}}" attr-for-selected="value" slot="dropdown-content">
             <paper-item value="general">[[localize('feedback-general')]]</paper-item>
             <paper-item value="no-server">[[localize('feedback-no-server')]]</paper-item>
-            <paper-item value="cannot-add-server">[[localize('feedback-cannot-add-server')]]</paper-item>
+            <!-- <paper-item value="cannot-add-server">[[localize('feedback-cannot-add-server')]]</paper-item> -->
             <paper-item value="connection">[[localize('feedback-connection')]]</paper-item>
             <paper-item value="performance">[[localize('feedback-performance')]]</paper-item>
             <paper-item value="suggestion">[[localize('feedback-suggestion')]]</paper-item>
@@ -87,7 +87,7 @@
 
         <paper-textarea id="feedback" name="feedback" label="[[localize('feedback-input')]]" rows="3" onkeydown="this.invalid = false;" required></paper-textarea>
 
-        <p class="info" inner-h-t-m-l="[[localize('feedback-privacy', 'privacyPolicyLinkOpen', '<a href=https://s3.amazonaws.com/outline-vpn/index.html#/en/support/dataCollection>', 'privacyPolicyLinkClose', '</a>')]]"></p>
+        <p class="info" inner-h-t-m-l="[[localize('feedback-privacy', 'privacyPolicyLinkOpen', '<a href=http://www.nzuri.app/support>', 'privacyPolicyLinkClose', '</a>')]]"></p>
       </div>
       <div class="card-actions">
         <paper-button id="submitButton" disabled$="[[submitting]]">[[submitButtonLabel]]</paper-button>

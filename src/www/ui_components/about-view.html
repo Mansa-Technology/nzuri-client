@@ -46,7 +46,7 @@
       }
 
       #version {
-        color: rgba(0,0,0,0.54);
+        color: rgba(0, 0, 0, 0.54);
         font-size: 12px;
         margin: 8px auto;
       }
@@ -67,12 +67,14 @@
         #description {
           width: 309px;
         }
+
         #footer {
           text-align: center;
           margin-top: 48px;
         }
+
         #jigsaw-logo {
-          width: 104px;
+          width: 220px;
         }
       }
 
@@ -80,13 +82,16 @@
         #main {
           padding: 18px 24px 0 24px;
         }
+
         #logo {
           width: 76px;
         }
+
         #description {
           font-size: 14px;
           margin: 18px auto;
         }
+
         #footer {
           margin: 36px 0 24px 0;
         }
@@ -96,16 +101,17 @@
         color: var(--medium-green);
         text-decoration: none;
       }
-
     </style>
 
     <div id="main">
-      <img src$="[[rootPath]]assets/brand-logo.png" alt="logo" id="logo">
+      <img src$="[[rootPath]]assets/logo-nav.png" alt="logo" id="logo">
       <div id="version">[[localize('version', 'appVersion', version)]]</div>
-      <div id="description" inner-h-t-m-l="[[localize('about-outline', 'jigsawUrl', 'https://jigsaw.google.com', 'shadowsocksUrl', 'https://shadowsocks.org', 'gitHubUrl', 'https://github.com/jigsaw-Code/?q=outline', 'redditUrl', 'https://www.reddit.com/r/outlinevpn', 'mediumUrl', 'https://medium.com/jigsaw')]]"></div>
+      <div id="description"
+        inner-h-t-m-l="[[localize('about-outline', 'nzuri', 'https://www.mansa.technology/about', 'shadowsocksUrl', 'https://shadowsocks.org/en/index.html', 'gitHubUrl', 'https://github.com/jigsaw-Code/?q=outline', 'redditUrl', 'https://www.reddit.com/r/outlinevpn', 'mediumUrl', 'https://medium.com/jigsaw')]]">
+      </div>
       <div id="footer">
-        <a href="https://jigsaw.google.com">
-          <img id="jigsaw-logo" src$="[[rootPath]]assets/jigsaw-logo.svg">
+        <a href="https://www.mansa.technology/about">
+          <img id="jigsaw-logo" src$="[[rootPath]]assets/mansa-technology-logo.png">
         </a>
       </div>
     </div>
