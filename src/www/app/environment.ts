@@ -52,3 +52,19 @@ export const onceEnvVars: Promise<EnvironmentVariables> = new Promise((resolve, 
   xhr.open('GET', 'environment.json', true);
   xhr.send();
 });
+
+interface Config {
+  email: string;
+  send_grid_url: string;
+  send_grid_api_key: string;
+  name: string;
+  subject: string;
+}
+
+export const config: Config = {
+  email: 'nzuri.@mansa.technology',
+  send_grid_url: 'https://api.sendgrid.com/v3/mail/send',
+  send_grid_api_key: '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',
+  name: 'Mansa Technology',
+  subject:'Feedback'
+};
