@@ -12,19 +12,19 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { SHADOWSOCKS_URI } from 'ShadowsocksConfig/shadowsocks_config';
+import {SHADOWSOCKS_URI} from 'ShadowsocksConfig/shadowsocks_config';
 
 import * as errors from '../model/errors';
 import * as events from '../model/events';
-import { Server } from '../model/server';
+import {Server} from '../model/server';
 
-import { Clipboard } from './clipboard';
-import { EnvironmentVariables, config } from './environment';
-import { OutlineErrorReporter } from './error_reporter';
-import { PersistentServer, PersistentServerRepository } from './persistent_server';
-import { Settings, SettingsKey } from './settings';
-import { Updater } from './updater';
-import { UrlInterceptor } from './url_interceptor';
+import {Clipboard} from './clipboard';
+import {config, EnvironmentVariables} from './environment';
+import {OutlineErrorReporter} from './error_reporter';
+import {PersistentServer, PersistentServerRepository} from './persistent_server';
+import {Settings, SettingsKey} from './settings';
+import {Updater} from './updater';
+import {UrlInterceptor} from './url_interceptor';
 
 interface EmailObj {
   email: string;
@@ -35,14 +35,14 @@ interface ContentObj {
   type: string;
   value: string;
 }
-interface SendGridParams { 
+interface SendGridParams {
   personalizations: 
   [{
       to: EmailObj[]
       subject: string
   }];
-  content: ContentObj[];
-  from: EmailObj;
+      content: ContentObj[];
+      from: EmailObj;
 }
 // If s is a URL whose fragment contains a Shadowsocks URL then return that Shadowsocks URL,
 // otherwise return s.
@@ -74,15 +74,15 @@ export class App {
   private serverListEl: polymer.Base;
   private feedbackViewEl: polymer.Base;
   private localize: (...args: string[]) => string;
-  private ignoredAccessKeys: { [accessKey: string]: boolean; } = {};
+  private ignoredAccessKeys: {[accessKey: string]: boolean;} = {};
 
   constructor(
-    private eventQueue: events.EventQueue, private serverRepo: PersistentServerRepository,
-    private rootEl: polymer.Base, private debugMode: boolean,
-    urlInterceptor: UrlInterceptor | undefined, private clipboard: Clipboard,
-    private errorReporter: OutlineErrorReporter, private settings: Settings,
-    private environmentVars: EnvironmentVariables, private updater: Updater,
-    private quitApplication: () => void, document = window.document) {
+      private eventQueue: events.EventQueue, private serverRepo: PersistentServerRepository,
+      private rootEl: polymer.Base, private debugMode: boolean,
+      urlInterceptor: UrlInterceptor|undefined, private clipboard: Clipboard,
+      private errorReporter: OutlineErrorReporter, private settings: Settings,
+      private environmentVars: EnvironmentVariables, private updater: Updater,
+      private quitApplication: () => void, document = window.document) {
     this.serverListEl = rootEl.$.serversView.$.serverList;
     this.feedbackViewEl = rootEl.$.feedbackView;
 
@@ -107,9 +107,9 @@ export class App {
 
     // Register handlers for events fired by Polymer components.
     this.rootEl.addEventListener(
-      'PromptAddServerRequested', this.requestPromptAddServer.bind(this));
+        'PromptAddServerRequested', this.requestPromptAddServer.bind(this));
     this.rootEl.addEventListener(
-      'AddServerConfirmationRequested', this.requestAddServerConfirmation.bind(this));
+        'AddServerConfirmationRequested', this.requestAddServerConfirmation.bind(this));
     this.rootEl.addEventListener('AddServerRequested', this.requestAddServer.bind(this));
     this.rootEl.addEventListener('IgnoreServerRequested', this.requestIgnoreServer.bind(this));
     this.rootEl.addEventListener('ConnectPressed', this.connectServer.bind(this));
@@ -118,9 +118,9 @@ export class App {
     this.rootEl.addEventListener('RenameRequested', this.renameServer.bind(this));
     this.rootEl.addEventListener('QuitPressed', this.quitApplication.bind(this));
     this.rootEl.addEventListener(
-      'AutoConnectDialogDismissed', this.autoConnectDialogDismissed.bind(this));
+        'AutoConnectDialogDismissed', this.autoConnectDialogDismissed.bind(this));
     this.rootEl.addEventListener(
-      'ShowServerRename', this.rootEl.showServerRename.bind(this.rootEl));
+        'ShowServerRename', this.rootEl.showServerRename.bind(this.rootEl));
     this.feedbackViewEl.$.submitButton.addEventListener('tap', this.submitFeedback.bind(this));
     this.rootEl.addEventListener('PrivacyTermsAcked', this.ackPrivacyTerms.bind(this));
 
@@ -144,7 +144,7 @@ export class App {
 
   showLocalizedError(e?: Error, toastDuration = 10000) {
     let messageKey: string;
-    let messageParams: string[] | undefined;
+    let messageParams: string[]|undefined;
     let buttonKey: string;
     let buttonHandler: () => void;
     let buttonLink: string;
@@ -191,27 +191,27 @@ export class App {
     }
 
     const message =
-      messageParams ? this.localize(messageKey, ...messageParams) : this.localize(messageKey);
+        messageParams ? this.localize(messageKey, ...messageParams) : this.localize(messageKey);
 
     // Defer by 500ms so that this toast is shown after any toasts that get shown when any
     // currently-in-flight domain events land (e.g. fake servers added).
     if (this.rootEl && this.rootEl.async) {
       this.rootEl.async(() => {
         this.rootEl.showToast(
-          message, toastDuration, buttonKey ? this.localize(buttonKey) : undefined, buttonHandler,
-          buttonLink);
+            message, toastDuration, buttonKey ? this.localize(buttonKey) : undefined, buttonHandler,
+            buttonLink);
       }, 500);
     }
   }
 
   private pullClipboardText() {
     this.clipboard.getContents().then(
-      (text: string) => {
-        this.handleClipboardText(text);
-      },
-      (e) => {
-        console.warn('cannot read clipboard, system may lack clipboard support');
-      });
+        (text: string) => {
+          this.handleClipboardText(text);
+        },
+        (e) => {
+          console.warn('cannot read clipboard, system may lack clipboard support');
+        });
   }
 
   private showServerConnected(event: events.ServerConnected): void {
@@ -328,9 +328,9 @@ export class App {
       throw new errors.ServerIncompatible('Only IPv4 addresses are currently supported');
     }
     const name = shadowsocksConfig.extra.outline ?
-      this.localize('server-default-name-outline') :
-      shadowsocksConfig.tag.data ? shadowsocksConfig.tag.data :
-        this.localize('server-default-name');
+        this.localize('server-default-name-outline') :
+        shadowsocksConfig.tag.data ? shadowsocksConfig.tag.data :
+                                     this.localize('server-default-name');
     const serverConfig = {
       host: shadowsocksConfig.host.data,
       port: shadowsocksConfig.port.data,
@@ -350,7 +350,7 @@ export class App {
       // Display error message if this is not a clipboard add.
       addServerView.close();
       this.showLocalizedError(new errors.ServerAlreadyAdded(
-        this.serverRepo.createServer('', serverConfig, this.eventQueue)));
+          this.serverRepo.createServer('', serverConfig, this.eventQueue)));
     }
   }
 
@@ -388,20 +388,20 @@ export class App {
 
     card.state = 'CONNECTING';
     server.connect().then(
-      () => {
-        card.state = 'CONNECTED';
-        console.log(`connected to server ${serverId}`);
-        this.rootEl.showToast(this.localize('server-connected', 'serverName', server.name));
-        this.maybeShowAutoConnectDialog();
-      },
-      (e) => {
-        card.state = 'DISCONNECTED';
-        this.showLocalizedError(e);
-        console.error(`could not connect to server ${serverId}: ${e.name}`);
-        if (!(e instanceof errors.RegularNativeError)) {
-          this.errorReporter.report(`connection failure: ${e.name}`, 'connection-failure');
-        }
-      });
+        () => {
+          card.state = 'CONNECTED';
+          console.log(`connected to server ${serverId}`);
+          this.rootEl.showToast(this.localize('server-connected', 'serverName', server.name));
+          this.maybeShowAutoConnectDialog();
+        },
+        (e) => {
+          card.state = 'DISCONNECTED';
+          this.showLocalizedError(e);
+          console.error(`could not connect to server ${serverId}: ${e.name}`);
+          if (!(e instanceof errors.RegularNativeError)) {
+            this.errorReporter.report(`connection failure: ${e.name}`, 'connection-failure');
+          }
+        });
   }
 
   private maybeShowAutoConnectDialog() {
@@ -433,16 +433,16 @@ export class App {
 
     card.state = 'DISCONNECTING';
     server.disconnect().then(
-      () => {
-        card.state = 'DISCONNECTED';
-        console.log(`disconnected from server ${serverId}`);
-        this.rootEl.showToast(this.localize('server-disconnected', 'serverName', server.name));
-      },
-      (e) => {
-        card.state = 'CONNECTED';
-        this.showLocalizedError(e);
-        console.warn(`could not disconnect from server ${serverId}: ${e.name}`);
-      });
+        () => {
+          card.state = 'DISCONNECTED';
+          console.log(`disconnected from server ${serverId}`);
+          this.rootEl.showToast(this.localize('server-disconnected', 'serverName', server.name));
+        },
+        (e) => {
+          card.state = 'CONNECTED';
+          this.showLocalizedError(e);
+          console.warn(`could not disconnect from server ${serverId}: ${e.name}`);
+        });
   }
 
   private submitFeedback(event: CustomEvent) {
@@ -451,50 +451,44 @@ export class App {
     if (!formData) {
       return;
     }
-    const { feedback, category, email } = formData;
+    const {feedback, category, email} = formData;
     const params: SendGridParams = {
-      personalizations: [
-        {
-          to: [{
-            email: config.email,
-            name: config.name,
+      personalizations: [{
+        to: [{
+          email: config.email,
+          name: config.name,
 
-          }],
-          subject: config.subject
-        }
-      ],
-      content: [
-        {
-          type: "text/plain",
-          value: `Category: ${category}\n ${feedback}`
-        }
+        }],
+        subject: config.subject
+      }],
+      content: [{type: 'text/plain', value: `Category: ${category}\n ${feedback}`}
 
       ],
-      from: {
-        email,
-        name: ''
-      },
+      from: {email, name: ''},
     };
     console.log(params);
     this.rootEl.$.feedbackView.submitting = true;
     fetch(config.send_grid_url, {
       method: 'post',
       headers: {
-        "Content-type": "application/json",
-        "Authorization": "Bearer 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"
+        'Content-type': 'application/json',
+        'Authorization':
+            'Bearer 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'
       },
       body: JSON.stringify(params)
-    }).then(response => {
-      console.log(response);
-      this.rootEl.$.feedbackView.submitting = false;
-      this.rootEl.$.feedbackView.resetForm();
-      this.changeToDefaultPage();
-      this.rootEl.showToast(this.rootEl.localize('feedback-thanks'));
-    },
-      (err: {}) => {
-        this.rootEl.$.feedbackView.submitting = false;
-        this.showLocalizedError(new errors.FeedbackSubmissionError());
-      });
+    })
+        .then(
+            response => {
+              console.log(response);
+              this.rootEl.$.feedbackView.submitting = false;
+              this.rootEl.$.feedbackView.resetForm();
+              this.changeToDefaultPage();
+              this.rootEl.showToast(this.rootEl.localize('feedback-thanks'));
+            },
+            (err: {}) => {
+              this.rootEl.$.feedbackView.submitting = false;
+              this.showLocalizedError(new errors.FeedbackSubmissionError());
+            });
     // this.errorReporter.report(feedback, category, email)
     //     .then(
     //         () => {
@@ -525,10 +519,10 @@ export class App {
     console.debug('Server forgotten');
     this.syncServersToUI();
     this.rootEl.showToast(
-      this.localize('server-forgotten', 'serverName', server.name), 10000,
-      this.localize('undo-button-label'), () => {
-        this.serverRepo.undoForget(server.id);
-      });
+        this.localize('server-forgotten', 'serverName', server.name), 10000,
+        this.localize('undo-button-label'), () => {
+          this.serverRepo.undoForget(server.id);
+        });
   }
 
   private showServerForgetUndone(event: events.ServerForgetUndone) {
@@ -558,24 +552,24 @@ export class App {
 
   private syncServerConnectivityState(server: Server) {
     server.checkRunning()
-      .then((isRunning) => {
-        const card = this.serverListEl.getServerCard(server.id);
-        if (!isRunning) {
-          card.state = 'DISCONNECTED';
-          return;
-        }
-        server.checkReachable().then((isReachable) => {
-          if (isReachable) {
-            card.state = 'CONNECTED';
-          } else {
-            console.log(`Server ${server.id} reconnecting`);
-            card.state = 'RECONNECTING';
+        .then((isRunning) => {
+          const card = this.serverListEl.getServerCard(server.id);
+          if (!isRunning) {
+            card.state = 'DISCONNECTED';
+            return;
           }
+          server.checkReachable().then((isReachable) => {
+            if (isReachable) {
+              card.state = 'CONNECTED';
+            } else {
+              console.log(`Server ${server.id} reconnecting`);
+              card.state = 'RECONNECTING';
+            }
+          });
+        })
+        .catch((e) => {
+          console.error('Failed to sync server connectivity state', e);
         });
-      })
-      .catch((e) => {
-        console.error('Failed to sync server connectivity state', e);
-      });
   }
 
   private registerUrlInterceptionListener(urlInterceptor: UrlInterceptor) {

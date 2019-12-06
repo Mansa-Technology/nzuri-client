@@ -63,6 +63,18 @@
         width: 96px;
       }
 
+      .social-icon {
+        width: 100%;
+        text-align: center;
+        display: inline-block;
+      }
+
+      #social-logo {
+        width: 26px;
+        padding: 0 1rem;
+
+      }
+
       @media (min-width: 600px) {
         #description {
           width: 309px;
@@ -107,12 +119,29 @@
       <img src$="[[rootPath]]assets/logo-nav.png" alt="logo" id="logo">
       <div id="version">[[localize('version', 'appVersion', version)]]</div>
       <div id="description"
-        inner-h-t-m-l="[[localize('about-outline', 'nzuri', 'https://www.mansa.technology/about', 'shadowsocksUrl', 'https://shadowsocks.org/en/index.html', 'gitHubUrl', 'https://github.com/jigsaw-Code/?q=outline', 'redditUrl', 'https://www.reddit.com/r/outlinevpn', 'mediumUrl', 'https://medium.com/jigsaw')]]">
+        inner-h-t-m-l="[[localize('about-outline', 'nzuri', 'https://www.mansa.technology/about', 'shadowsocksUrl', 'https://shadowsocks.org/en/index.html', 'gitHubUrl', 'https://github.com/Mansa-Technology/nzuri-client', 'redditUrl', 'https://www.reddit.com/r/outlinevpn', 'mediumUrl', 'https://medium.com/jigsaw')]]">
       </div>
       <div id="footer">
         <a href="https://www.mansa.technology/about">
           <img id="jigsaw-logo" src$="[[rootPath]]assets/mansa-technology-logo.png">
         </a>
+        <div class="social-icon">
+          <a href="https://github.com/Mansa-Technology/nzuri-client">
+            <img id="social-logo" src$="[[rootPath]]assets/github.png">
+          </a>
+          <a href="https://www.facebook.com/NzuriVPN/">
+            <img id="social-logo" src$="[[rootPath]]assets/facebook.png">
+          </a>
+          <a href="https://www.instagram.com/nzurivpn/">
+            <img id="social-logo" src$="[[rootPath]]assets/instgram.png">
+          </a>
+          <a href="https://twitter.com/NzuriVpn">
+            <img id="social-logo" src$="[[rootPath]]assets/twitter.png">
+          </a>
+          <a href="https://www.youtube.com/channel/UC5NmUbIZSKwm6wLCm-gx3AQ">
+            <img id="social-logo" src$="[[rootPath]]assets/youTube.png">
+          </a>
+        </div>
       </div>
     </div>
   </template>

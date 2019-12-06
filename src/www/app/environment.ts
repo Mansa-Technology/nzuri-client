@@ -66,5 +66,5 @@ export const config: Config = {
   send_grid_url: 'https://api.sendgrid.com/v3/mail/send',
   send_grid_api_key: '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',
   name: 'Mansa Technology',
-  subject:'Feedback'
+  subject: 'Feedback'
 };
