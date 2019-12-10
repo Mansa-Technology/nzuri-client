@@ -19,3 +19,4 @@ tools/OutlineService/OutlineService/bin/*
 *.sw?
 tools/smartdnsblock/bin/*
 !tools/smartdnsblock/bin/*.exe
+/nbproject/private/

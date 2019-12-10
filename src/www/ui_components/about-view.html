@@ -26,6 +26,7 @@
         text-align: center;
         width: 100%;
         height: 100vh;
+        height: 100%;
       }
 
       #main {
@@ -37,13 +38,10 @@
 
       #footer {
         flex: 1;
-        margin: 48px 0 36px 0;
+        margin: 36px 0 4px 0;
         text-align: left;
       }
 
-      #logo {
-        width: 96px;
-      }
 
       #version {
         color: rgba(0, 0, 0, 0.54);
@@ -60,7 +58,7 @@
       }
 
       #jigsaw-logo {
-        width: 96px;
+        height: 50px;
       }
 
       .social-icon {
@@ -82,7 +80,7 @@
 
         #footer {
           text-align: center;
-          margin-top: 48px;
+          margin-top: 36px;
         }
 
         #jigsaw-logo {
@@ -105,7 +103,9 @@
         }
 
         #footer {
-          margin: 36px 0 24px 0;
+          margin: 36px 0 4px 0;
+          bottom: 0;
+    position: fixed;
         }
       }
 
@@ -121,27 +121,29 @@
       <div id="description"
         inner-h-t-m-l="[[localize('about-outline', 'nzuri', 'https://www.mansa.technology/about', 'shadowsocksUrl', 'https://shadowsocks.org/en/index.html', 'gitHubUrl', 'https://github.com/Mansa-Technology/nzuri-client', 'redditUrl', 'https://www.reddit.com/r/outlinevpn', 'mediumUrl', 'https://medium.com/jigsaw')]]">
       </div>
+      <div class="social-icon">
+        <a href="https://github.com/Mansa-Technology/nzuri-client">
+          <img id="social-logo" src$="[[rootPath]]assets/github.png">
+        </a>
+        <a href="https://www.facebook.com/NzuriVPN/">
+          <img id="social-logo" src$="[[rootPath]]assets/facebook.png">
+        </a>
+        <a href="https://www.instagram.com/nzurivpn/">
+          <img id="social-logo" src$="[[rootPath]]assets/instgram.png">
+        </a>
+        <a href="https://twitter.com/NzuriVpn">
+          <img id="social-logo" src$="[[rootPath]]assets/twitter.png">
+        </a>
+        <a href="https://www.youtube.com/channel/UC5NmUbIZSKwm6wLCm-gx3AQ">
+          <img id="social-logo" src$="[[rootPath]]assets/youTube.png">
+        </a>
+      </div>
       <div id="footer">
+
         <a href="https://www.mansa.technology/about">
           <img id="jigsaw-logo" src$="[[rootPath]]assets/mansa-technology-logo.png">
         </a>
-        <div class="social-icon">
-          <a href="https://github.com/Mansa-Technology/nzuri-client">
-            <img id="social-logo" src$="[[rootPath]]assets/github.png">
-          </a>
-          <a href="https://www.facebook.com/NzuriVPN/">
-            <img id="social-logo" src$="[[rootPath]]assets/facebook.png">
-          </a>
-          <a href="https://www.instagram.com/nzurivpn/">
-            <img id="social-logo" src$="[[rootPath]]assets/instgram.png">
-          </a>
-          <a href="https://twitter.com/NzuriVpn">
-            <img id="social-logo" src$="[[rootPath]]assets/twitter.png">
-          </a>
-          <a href="https://www.youtube.com/channel/UC5NmUbIZSKwm6wLCm-gx3AQ">
-            <img id="social-logo" src$="[[rootPath]]assets/youTube.png">
-          </a>
-        </div>
+
       </div>
     </div>
   </template>

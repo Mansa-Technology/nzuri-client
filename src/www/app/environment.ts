@@ -62,7 +62,7 @@ interface Config {
 }
 
 export const config: Config = {
-  email: 'nzuri.@mansa.technology',
+  email: 'nzuri@mansa.technology',
   send_grid_url: 'https://api.sendgrid.com/v3/mail/send',
   send_grid_api_key: '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',
   name: 'Mansa Technology',

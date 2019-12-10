@@ -51,7 +51,7 @@
         --app-toolbar-height: 40px;
         --light-green: #2fbea5;
         --medium-green: #4793A3;
-        --dark-green: #263238;
+        --dark-green: #000000;
         --light-gray: #ECECEC;
         --paper-dialog-button-color: var(--medium-green);
         --app-drawer-width: 280px;
@@ -150,6 +150,11 @@
         width: 60px;
         height: 60px;
         margin-top: 30px;
+      }
+
+      #server-logo {
+        height: 22px !important;
+        object-fit: cover;
       }
 
       .nav-hr {
@@ -309,7 +314,8 @@
       </hr>
       <paper-listbox id="drawer-nav" selected="{{routeData.page}}" attr-for-selected="name" on-tap="closeDrawer">
         <paper-icon-item name="servers">
-          <iron-icon icon="outline-icons:outline" slot="item-icon"></iron-icon>
+          <img src$="[[rootPath]]assets/server-icon.png" alt="server-logo" slot="item-icon" id="server-logo">
+          <!-- <iron-icon icon="outline-icons:outline" slot="item-icon"></iron-icon> -->
           <span class="item-label">[[localize('servers-menu-item')]]</span>
         </paper-icon-item>
         <paper-icon-item name="feedback">
@@ -321,7 +327,7 @@
           [[localize('about-page-title')]]
         </paper-icon-item>
         <paper-icon-item name="help" class$="[[_computeIsLastVisibleMenuItem(shouldShowQuitButton)]]">
-          <a href="http://www.nzuri.app/support" id="helpAnchor" hidden></a>
+          <a href="https://www.nzuri.app/support" id="helpAnchor" hidden></a>
           <iron-icon icon="help" slot="item-icon"></iron-icon>
           [[localize('help-page-title')]]
         </paper-icon-item>
@@ -330,15 +336,13 @@
           [[localize('quit')]]
         </paper-icon-item>
         <paper-item class="border-top">
-          <a href="http://www.nzuri.app/privacy-policy/">[[localize('privacy')]]</a>
+          <a href="https://www.nzuri.app/privacy-policy/">[[localize('privacy')]]</a>
         </paper-item>
         <paper-item>
-          <a
-            href="http://www.nzuri.app/support">[[localize('data-collection')]]</a>
+          <a href="https://www.nzuri.app/support">[[localize('data-collection')]]</a>
         </paper-item>
         <paper-item>
-          <a
-            href="http://www.nzuri.app/terms-of-service">[[localize('terms')]]</a>
+          <a href="https://www.nzuri.app/terms-of-service">[[localize('terms')]]</a>
         </paper-item>
         <paper-item name="licenses">
           <span>[[localize('licenses-page-title')]]</span>

@@ -9,7 +9,7 @@
     "third_party",
     "tools"
   ],
-  "artifactName": "Outline-Client.${ext}",
+  "artifactName": "Nzuri-Client.${ext}",
   "directories": {
     "output": "build/dist"
   },

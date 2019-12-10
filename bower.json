@@ -1,5 +1,5 @@
 {
-  "name": "outline-client",
+  "name": "nzuri-client",
   "ignore": [
     "**/.*",
     "node_modules",

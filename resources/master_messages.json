@@ -4,8 +4,8 @@
     "description": "The text for a button to close the current page or dialog."
   },
   "servers_page_title": {
-    "message": "Outline",
-    "description": "The title of the main page of the application, showing the application's title (Outline). Outline is the product name and can be found in the translation glossary."
+    "message": "Nzuri",
+    "description": "The title of the main page of the application, showing the application's title (Nzuri). Nzuri is the product name and can be found in the translation glossary."
   },
   "servers_menu_item": {
     "message": "Servers",
@@ -48,7 +48,7 @@
     "description": "This is one of the feedback categories the user can select in a drop-down when sending a feedback to the app developers. This is for feedback related to not being able to import a server into the application."
   },
   "feedback_performance": {
-    "message": "Outline is slow",
+    "message": "Nzuri is slow",
     "description": "This is one of the feedback categories the user can select in a drop-down when sending a feedback to the app developers. This is for performance feedback, for example, the speed of connection."
   },
   "feedback_suggestion": {
@@ -68,8 +68,8 @@
     "description": "Text displayed below a feedback form explaining that the support team can only respond to feedback in English."
   },
   "feedback_privacy": {
-    "message": "Your feedback, your email address (if provided), and additional information referred to in the $START_OF_LINK$Data Collection Policy$END_OF_LINK$ will be sent to the Outline team. Please do not include personal information in your feedback.",
-    "description": "Text appearing above a feedback form explaining the feedback process. Includes a link to the Data Collection Policy as marked by the start and end of link. Outline is the product name and can be found in the translation glossary.",
+    "message": "Your feedback, your email address (if provided), and additional information referred to in the $START_OF_LINK$Data Collection Policy$END_OF_LINK$ will be sent to the Nzuri team. Please do not include personal information in your feedback.",
+    "description": "Text appearing above a feedback form explaining the feedback process. Includes a link to the Data Collection Policy as marked by the start and end of link. Nzuri is the product name and can be found in the translation glossary.",
     "placeholders": {
       "END_OF_LINK": {
         "content": "{privacyPolicyLinkClose}"
@@ -92,8 +92,8 @@
     "description": "Status text showing that a form is progress of being submitted."
   },
   "about_outline": {
-    "message": "Outline is an open source project created by $JIGSAW$ to provide a safer way for news organizations and journalists to access the internet.$NEW_LINE$$NEW_LINE$ Outline is powered by $SHADOWSOCKS$ and is still an early stage product. You can contribute to the code on $GITHUB$, and follow us on $REDDIT$ and $MEDIUM$ to hear when we expand to more platforms and add new features.",
-    "description": "The contents of the About page of the app. Outline is the product name and can be found in the translation glossary.",
+    "message": "Nzuri is an open source project created by $JIGSAW$ to provide a safer way for news organizations and journalists to access the internet.$NEW_LINE$$NEW_LINE$ Nzuri is powered by $SHADOWSOCKS$ and is still an early stage product. You can contribute to the code on $GITHUB$, and follow us on $REDDIT$ and $MEDIUM$ to hear when we expand to more platforms and add new features.",
+    "description": "The contents of the About page of the app. Nzuri is the product name and can be found in the translation glossary.",
     "placeholders": {
       "GITHUB": {
         "content": "<a href={gitHubUrl}>GitHub</a>"
@@ -218,8 +218,8 @@
     "description": "This is the default name for an added server when the type or name is not specified by the access key."
   },
   "server_default_name_outline": {
-    "message": "Outline Server",
-    "description": "The default name for a server when adding a new server to the application. Outline is the product name and can be found in the translation glossary."
+    "message": "Nzuri Server",
+    "description": "The default name for a server when adding a new server to the application. Nzuri is the product name and can be found in the translation glossary."
   },
   "server_detected": {
     "message": "Please confirm that you want to add this server.",
@@ -256,7 +256,7 @@
     "placeholders": {
       "SERVER_NAME": {
         "content": "{serverName}",
-        "example": "My Outline Server"
+        "example": "My Nzuri Server"
       }
     }
   },
@@ -266,7 +266,7 @@
     "placeholders": {
       "SERVER_NAME": {
         "content": "{serverName}",
-        "example": "My Outline Server"
+        "example": "My Nzuri Server"
       }
     }
   },
@@ -276,7 +276,7 @@
     "placeholders": {
       "SERVER_NAME": {
         "content": "{serverName}",
-        "example": "My Outline Server"
+        "example": "My Nzuri Server"
       }
     }
   },
@@ -298,7 +298,7 @@
     "placeholders": {
       "SERVER_NAME": {
         "content": "{serverName}",
-        "example": "My Outline Server"
+        "example": "My Nzuri Server"
       }
     }
   },
@@ -308,7 +308,7 @@
     "placeholders": {
       "SERVER_NAME": {
         "content": "{serverName}",
-        "example": "My Outline Server"
+        "example": "My Nzuri Server"
       }
     }
   },
@@ -344,8 +344,8 @@
     "description": "An error message that indicates the access key provided is not correct."
   },
   "error_server_incompatible": {
-    "message": "Sorry, this access key is not compatible with this version of Outline.",
-    "description": "Error message shown when the provided access key isn't compatible the user's version of the application. Outline is the product name and can be found in the translation glossary."
+    "message": "Sorry, this access key is not compatible with this version of Nzuri.",
+    "description": "Error message shown when the provided access key isn't compatible the user's version of the application. Nzuri is the product name and can be found in the translation glossary."
   },
   "error_server_already_added": {
     "message": "Server “$SERVER_NAME$” already added.",
@@ -353,7 +353,7 @@
     "placeholders": {
       "SERVER_NAME": {
         "content": "{serverName}",
-        "example": "My Outline Server"
+        "example": "My Nzuri Server"
       }
     }
   },
@@ -362,8 +362,8 @@
     "description": "An error message shown when the user is trying to send feedback to the application developers but it is failing."
   },
   "outline_plugin_error_vpn_permission_not_granted": {
-    "message": "Outline needs your permission to set up a VPN connection to the server. Please try again, or submit feedback if you need help.",
-    "description": "An error message shown when the application does not have the proper operating system permission to create a VPN connection. Outline is the product name and can be found in the translation glossary."
+    "message": "Nzuri needs your permission to set up a VPN connection to the server. Please try again, or submit feedback if you need help.",
+    "description": "An error message shown when the application does not have the proper operating system permission to create a VPN connection. Nzuri is the product name and can be found in the translation glossary."
   },
   "outline_plugin_error_invalid_server_credentials": {
     "message": "It seems like your access key is not valid. If this happens again, please contact your server admin.",
@@ -378,7 +378,7 @@
     "description": "An error message shown when the user tries to connect to a server that cannot be reached for some reason."
   },
   "outline_plugin_error_admin_permissions": {
-    "message": "Outline needs admin permissions in order to run. If you don't have admin permissions, please try again after restarting your Windows computer or ask your system administrator for help.",
+    "message": "Nzuri needs admin permissions in order to run. If you don't have admin permissions, please try again after restarting your Windows computer or ask your system administrator for help.",
     "description": "An error message when the application is not granted administrator permissions."
   },
   "outline_plugin_error_routing_tables": {
@@ -403,19 +403,19 @@
   },
   "auto_connect_dialog_title": {
     "message": "Stay protected, always",
-    "description": "The title of a message to the user that tells them Outline will keep connected unless explicitly told to disconnect. Outline is the product name and can be found in the translation glossary."
+    "description": "The title of a message to the user that tells them Nzuri will keep connected unless explicitly told to disconnect. Nzuri is the product name and can be found in the translation glossary."
   },
   "auto_connect_dialog_detail": {
-    "message": "Unless you disconnect from your Outline server, Outline will automatically connect next time you restart your device.",
-    "description": "An explanation of the connection behavior of the app. Outline is the product name and can be found in the translation glossary."
+    "message": "Unless you disconnect from your Nzuri server, Nzuri will automatically connect next time you restart your device.",
+    "description": "An explanation of the connection behavior of the app. Nzuri is the product name and can be found in the translation glossary."
   },
   "non_system_vpn_warning_title": {
     "message": "Verify your browser connection",
     "description": "Title of a dialog that advises the user to check their internet browser's VPN connection."
   },
   "non_system_vpn_warning_detail": {
-    "message": "Most browsers connect automatically with Outline, some do not.",
-    "description": "Further explanation message that the user needs to verify that their browser is connected through Outline. Outline is the product name and can be found in the translation glossary."
+    "message": "Most browsers connect automatically with Nzuri, some do not.",
+    "description": "Further explanation message that the user needs to verify that their browser is connected through Nzuri. Nzuri is the product name and can be found in the translation glossary."
   },
   "get_help": {
     "message": "Get help",
@@ -434,12 +434,12 @@
     "description": "The text on a button to cancel the current operation."
   },
   "update_downloaded": {
-    "message": "An updated version of Outline has been downloaded. It will be installed when you restart Outline.",
-    "description": "A message shown to the user to notify them about a new downloaded version. Outline is the product name and can be found in the translation glossary."
+    "message": "An updated version of Nzuri has been downloaded. It will be installed when you restart Nzuri.",
+    "description": "A message shown to the user to notify them about a new downloaded version. Nzuri is the product name and can be found in the translation glossary."
   },
   "privacy_title": {
-    "message": "Outline will never collect your personal information",
-    "description": "The title of a information page about user privacy. Outline is the product name and can be found in the translation glossary."
+    "message": "Nzuri will never collect your personal information",
+    "description": "The title of a information page about user privacy. Nzuri is the product name and can be found in the translation glossary."
   },
   "privacy_text": {
     "message": "Some technical information is sent if you submit feedback, if there’s an app error or crash, or if your server administrator opts in to share anonymous server usage data.",
