@@ -114,6 +114,11 @@
         padding: 0;
       }
 
+       a.help {
+        text-decoration: none;
+        color: #272626;
+      }
+
       /* rtl:begin:ignore */
       #drawer-nav paper-icon-item {
         cursor: pointer;
@@ -327,9 +332,9 @@
           [[localize('about-page-title')]]
         </paper-icon-item>
         <paper-icon-item name="help" class$="[[_computeIsLastVisibleMenuItem(shouldShowQuitButton)]]">
-          <a href="https://www.nzuri.app/support" id="helpAnchor" hidden></a>
           <iron-icon icon="help" slot="item-icon"></iron-icon>
-          [[localize('help-page-title')]]
+          <a href="https://www.nzuri.app/support" id="helpAnchor" class="help">
+            [[localize('help-page-title')]]</a>
         </paper-icon-item>
         <paper-icon-item name="quit" class="last-menu-item" hidden$="[[!shouldShowQuitButton]]">
           <iron-icon icon="cancel" slot="item-icon"></iron-icon>
